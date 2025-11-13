@@ -29,4 +29,9 @@ export class NavbarComponent {
   closeMenu(): void {
     this.mobileMenuOpen = false;
   }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
 }
