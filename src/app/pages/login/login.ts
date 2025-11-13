@@ -23,12 +23,12 @@ export class Login {
   }
 
   onSubmit(): void {
-    console.log('Intentando iniciar sesión...'); // 👈 Agregado
+    console.log('Intentando iniciar sesión...'); // Agregado
 
     if (this.loginForm.invalid) return;
 
     const { correo, contrasena } = this.loginForm.value;
-    console.log('Datos enviados:', { correo, contrasena }); // 👈 Agregado
+    console.log('Datos enviados:', { correo, contrasena }); // Agregado
 
     this.authService.login(correo, contrasena).subscribe({
       next: (res) => {

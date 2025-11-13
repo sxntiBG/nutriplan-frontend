@@ -16,14 +16,19 @@ interface LoginResponse {
 })
 export class AuthService {
   private apiUrl = `${environment.apiUrl}/auth`;
+  private userKey = 'userData';
 
   constructor(private http: HttpClient, private router: Router) {}
 
   login(correo: string, contrasena: string): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${this.apiUrl}/login`, { correo, contrasena }).pipe(
-      tap((res) => {
+      tap((res: any) => {
         localStorage.setItem('token', res.token);
-        localStorage.setItem('correo', res.correo);
+        this.setUserData({
+          id: res.id,
+          nombre: res.nombre,
+          correo: res.correo
+        });
       })
     );
   }
@@ -56,5 +61,21 @@ export class AuthService {
       console.error('Token inválido:', e);
       return false;
     }
+  }
+
+   // Guarda los datos del usuario al hacer login
+  setUserData(user: any) {
+    localStorage.setItem(this.userKey, JSON.stringify(user));
+  }
+
+  // Obtiene los datos del usuario actual
+  getUserData() {
+    const data = localStorage.getItem(this.userKey);
+    return data ? JSON.parse(data) : null;
+  }
+
+  // Limpia los datos al cerrar sesión
+  clearUserData() {
+    localStorage.removeItem(this.userKey);
   }
 }
