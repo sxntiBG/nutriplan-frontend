@@ -1,1 +1,29 @@
-<app-nav></app-nav>
+<div class="w-full flex flex-col items-center bg-[#f8fbfa] py-8">
+
+    <!-- Contenedor de pasos -->
+    <div class="flex justify-center items-center gap-8 mb-3">
+        <ng-container *ngFor="let step of steps; let i = index">
+        <div class="flex items-center">
+            <!-- Círculo -->
+            <div
+            class="w-9 h-9 rounded-full flex items-center justify-center font-semibold border-2 transition-all duration-300"
+            [class.bg-black]="step === currentStep"
+            [class.text-white]="step === currentStep"
+            [class.border-black]="step === currentStep"
+            [class.bg-white]="step !== currentStep"
+            [class.text-gray-400]="step !== currentStep"
+            [class.border-gray-300]="step !== currentStep"
+            >
+            {{ step }}
+            </div>
+
+            <div *ngIf="i < totalSteps - 1" class="w-12 h-[2px] bg-gray-300 mx-2"></div>
+        </div>
+        </ng-container>
+    </div>
+
+    <!-- Texto debajo -->
+    <p class="text-gray-500 text-sm">
+        Paso {{ currentStep }} de {{ totalSteps }}
+    </p>
+    </div>
