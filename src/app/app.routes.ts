@@ -4,7 +4,7 @@ import { Login } from './pages/login/login'
 import { Register } from './pages/register/register';
 import { Settings } from './pages/settings/settings';
 import { DatosNutricionales } from './pages/datos-nutricionales/datos-nutricionales';
-
+import { ProgressBarComponent } from './shared/components/progress-bar-component/progress-bar-component';
 export const routes: Routes = [
   { path: '', component: Index },
   { path: 'login', component: Login },
