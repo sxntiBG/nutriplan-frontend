@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard-nav',
+  selector: 'app-nav',
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './navbar.html'
 })
-export class DashboardNavComponent {
+export class NavbarComponent {
   mobileMenuOpen = false;
 
   navItems = [
