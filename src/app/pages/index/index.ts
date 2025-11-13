@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './index.html',
   styleUrl: './index.css'
 })
-export class IndexComponent {
+export class Index {
 
 }
 
