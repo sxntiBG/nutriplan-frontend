@@ -30,8 +30,7 @@ export const routes: Routes = [
   },
 
   { path: 'register', component: Register },
-
+  { path:'registro-datos', component:RegistroWizard},
   { path: 'settings', component: Settings, canActivate: [AuthGuard] },
-
   { path: '**', redirectTo: '' },
 ];

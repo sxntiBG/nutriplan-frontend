@@ -79,14 +79,15 @@
         </div>
 
         <!-- Login Button -->
-        <button
-          type="submit"
-          class="w-full bg-gradient-to-r from-[#191919] to-accent text-white font-semibold py-3 rounded-2xl hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
-        >
-          Iniciar sesión
-        </button>
-
-        <!-- Mensaje de error -->
+        <a routerLink="/registro-datos" class="block">
+          <button
+            type="button"
+            class="w-full bg-gradient-to-r from-[#191919] to-accent text-white font-semibold py-3 rounded-2xl hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+          >
+            Iniciar sesión
+          </button>
+        </a>
+              <!-- Mensaje de error -->
         <p *ngIf="errorMessage" class="text-red-500 text-sm mt-2 text-center">
           {{ errorMessage }}
         </p>
