@@ -74,6 +74,12 @@ export class AuthService {
     return data ? JSON.parse(data) : null;
   }
 
+  // Obtiene el id del usuario actual
+  getUserId(): number | null {
+  const user = this.getUserData();
+  return user ? user.id : null;
+}
+
   // Limpia los datos al cerrar sesión
   clearUserData() {
     localStorage.removeItem(this.userKey);

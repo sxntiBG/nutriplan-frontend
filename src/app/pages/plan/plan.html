@@ -1,0 +1,97 @@
+<div class="min-h-screen bg-gradient-to-br from-mint/20 via-sky/20 to-lavender/20">
+    <!-- Header -->
+    <header class="border-b border-border/50 bg-card/80 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a routerLink="/">
+                    <h1 class="text-2xl font-bold text-primary">NutriPlan</h1>
+                </a>
+                <app-nav></app-nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Aquí inicia mi código -->
+    <div class="w-full px-4 sm:px-6 lg:px-10 py-6 bg-gray-50">
+
+        <!-- Encabezado -->
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Hola, {{ nombre }}</h2>
+        <p class="text-gray-500 mb-6 text-sm sm:text-base">
+            Aquí está tu resumen nutricional de hoy
+        </p>
+
+        <!-- Contenedor de tarjetas -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+
+            <!-- Tarjeta Calorías -->
+            <div class="bg-white p-4 sm:p-5 rounded-xl shadow-sm border">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-pink-500"></div>
+                    <h3 class="text-gray-600 font-semibold text-sm sm:text-base">Calorías Totales</h3>
+                </div>
+
+                <p class="text-2xl font-bold text-gray-900"> {{ caloriasTotales }} <span
+                        class="text-gray-400 text-base">kcal/día</span></p>
+
+                <!-- Barra -->
+                <div class="w-full h-2 bg-pink-100 rounded-full mt-3">
+                    <div class="h-full bg-pink-500 rounded-full" style="width: 100%;"></div>
+                </div>
+
+                <!-- <p class="text-xs sm:text-sm text-gray-500 mt-1">550 kcal restantes</p> -->
+            </div>
+
+            <!-- Tarjeta Proteínas -->
+            <div class="bg-white p-4 sm:p-5 rounded-xl shadow-sm border">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-400"></div>
+                    <h3 class="text-gray-600 font-semibold text-sm sm:text-base">Proteínas</h3>
+                </div>
+
+                <p class="text-2xl font-bold text-gray-900"> {{ proteinasG }} <span
+                        class="text-gray-400 text-base">g/día</span>
+                </p>
+
+                <div class="w-full h-2 bg-green-100 rounded-full mt-3">
+                    <div class="h-full bg-green-400 rounded-full" style="width: 100%;"></div>
+                </div>
+
+            </div>
+
+            <!-- Tarjeta Carbohidratos -->
+            <div class="bg-white p-4 sm:p-5 rounded-xl shadow-sm border">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-yellow-400"></div>
+                    <h3 class="text-gray-600 font-semibold text-sm sm:text-base">Carbohidratos</h3>
+                </div>
+
+                <p class="text-2xl font-bold text-gray-900">
+                    {{ carbohidratosG }} <span class="text-gray-400 text-base">g/día</span>
+                </p>
+
+                <div class="w-full h-2 bg-yellow-100 rounded-full mt-3">
+                    <div class="h-full bg-yellow-400 rounded-full" style="width: 100%;"></div>
+                </div>
+            </div>
+
+            <!-- Tarjeta Agua -->
+            <div class="bg-white p-4 sm:p-5 rounded-xl shadow-sm border">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-blue-400"></div>
+                    <h3 class="text-gray-600 font-semibold text-sm sm:text-base">Grasas</h3>
+                </div>
+
+                <p class="text-2xl font-bold text-gray-900">
+                    {{ grasasG }} <span class="text-gray-400 text-base">g/día</span>
+                </p>
+
+                <div class="w-full h-2 bg-blue-100 rounded-full mt-3">
+                    <div class="h-full bg-blue-400 rounded-full" style="width: 100%;"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Aquí termina mi código -->
+</div>
