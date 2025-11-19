@@ -1,0 +1,22 @@
+<h2 class="text-xl font-bold mb-4">Resumen del registro</h2>
+
+<div class="space-y-4">
+
+  <div class="p-4 bg-gray-100 rounded-xl">
+    <h3 class="font-semibold">Datos Nutricionales</h3>
+    <p>Peso: {{ datos.datosNutricionales?.peso }} kg</p>
+    <p>Estatura: {{ datos.datosNutricionales?.estatura }} cm</p>
+    <p>Edad: {{ datos.datosNutricionales?.edad }}</p>
+    <p>Género: {{ datos.datosNutricionales?.genero }}</p>
+  </div>
+
+
+</div>
+
+<div class="flex justify-center mt-4">
+  <button class="bg-green-600 text-white px-4 py-2 rounded-lg"
+  (click)="guardar()">
+    Guardar
+  </button>
+</div>
+

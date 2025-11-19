@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 
 export const routes: Routes = [
   { path: '', component: Index },
-
   {
     path: 'login',
     component: Login,
@@ -31,7 +30,6 @@ export const routes: Routes = [
       },
     ],
   },
-
   { path: 'register', component: Register },
 
   { path: 'plan', component: Plan, canActivate: [AuthGuard] },

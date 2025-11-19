@@ -1,12 +1,11 @@
 import { Component , Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from '../navbar/navbar';
 
 
 @Component({
   selector: 'app-progress-bar-component',
    standalone: true, 
-  imports: [CommonModule, NavbarComponent],
+  imports: [CommonModule],
   templateUrl: './progress-bar-component.html',
   
 })
