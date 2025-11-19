@@ -1,10 +1,9 @@
 import { Component,Output, EventEmitter } from '@angular/core';
-import { NavbarComponent } from '../../shared/components/navbar/navbar';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-datos-nutricionales',
-  imports: [NavbarComponent,FormsModule],
+  imports: [FormsModule],
   templateUrl: './datos-nutricionales.html',
   styleUrl: './datos-nutricionales.css',
 })

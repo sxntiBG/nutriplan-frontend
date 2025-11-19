@@ -7,7 +7,7 @@ import { RegistroWizard } from './shared/components/registro-wizard/registro-wiz
 export const routes: Routes = [
   { path: '', component: Index },
   { path: 'login', component: Login },
-  { path: 'register', component: Register }, 
+  { path: 'register', component: Register },
   { path:'registro-datos', component:RegistroWizard},
   { path: 'settings', component: Settings },
   { path: '**', redirectTo: '' },
