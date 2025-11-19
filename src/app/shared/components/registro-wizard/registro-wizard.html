@@ -1,0 +1,12 @@
+<app-nav></app-nav>
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-white/70 rounded-2xl shadow">
+  <app-progress-bar-component [currentStep]="pasoActual"></app-progress-bar-component>
+
+  <div class="mt-6">
+    <app-datos-nutricionales
+      *ngIf="pasoActual === 1"
+      (onNext)="siguiente($event)">
+    </app-datos-nutricionales>
+
+  </div>
+</div>

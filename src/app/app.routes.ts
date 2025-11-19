@@ -5,9 +5,11 @@ import { Plan } from './pages/plan/plan';
 import { Register } from './pages/register/register';
 import { Settings } from './pages/settings/settings';
 import { AuthGuard } from './guards/auth.guard';
+import { RegistroWizard } from './shared/components/registro-wizard/registro-wizard';
 import { inject } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
+
 
 export const routes: Routes = [
   { path: '', component: Index },
@@ -34,7 +36,7 @@ export const routes: Routes = [
 
   { path: 'plan', component: Plan, canActivate: [AuthGuard] },
 
+  { path:'registro-datos', component:RegistroWizard},
   { path: 'settings', component: Settings, canActivate: [AuthGuard] },
-
   { path: '**', redirectTo: '' },
 ];
