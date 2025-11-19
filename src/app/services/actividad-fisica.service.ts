@@ -12,6 +12,11 @@ export class ActividadFisicaService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
-  }
+    const token = localStorage.getItem('token');
+    return this.http.get<any[]>(this.apiUrl, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+}
 }

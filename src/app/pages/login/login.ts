@@ -33,7 +33,7 @@ export class Login {
     this.authService.login(correo, contrasena).subscribe({
       next: (res) => {
         console.log('Inicio de sesión exitoso:', res);
-        this.router.navigate(['/settings']);
+        this.router.navigate(['/registro-datos']);
       },
       error: (err) => {
         console.error('Error en login:', err);

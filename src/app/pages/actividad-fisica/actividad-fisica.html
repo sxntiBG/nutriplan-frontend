@@ -1,13 +1,39 @@
 <div class="container mx-auto px-4 py-8 max-w-3xl">
   <!-- Page Header -->
   <div class="mb-8">
-    <h2 class="text-3xl font-bold text-foreground mb-2">Datos Personales</h2>
+    <h2 class="text-3xl font-bold text-foreground mb-2">Nivel de actividad fisica</h2>
   </div>
 
   <div class="bg-card rounded-3xl shadow-soft p-6 border border-border/50 mb-6">
-    <form>
 
-    
+    <!-- Actividad Física -->
+        <div class="mt-6">
+        <label class="block text-sm font-medium text-foreground mb-3">
+            Nivel de actividad física
+        </label>
+
+        <div class="space-y-3">
+            <div *ngFor="let act of actividades" 
+                class="flex items-start gap-3 p-3 border border-border/50 rounded-2xl bg-background hover:bg-muted/20 transition-all cursor-pointer">
+
+            <input 
+                type="radio" 
+                name="actividadFisica"
+                [value]="act.factor" 
+                [(ngModel)]="datos.factorActividad"
+                class="mt-1"
+            >
+
+            <div>
+                <p class="font-medium text-sm text-foreground">{{ act.nombre }}</p>
+                <p class="text-xs text-muted-foreground leading-tight" *ngIf="act.descripcion">
+                {{ act.descripcion }}
+                </p>
+            </div>
+
+            </div>
+        </div>
+        </div>
 
       <!-- Botones -->
       <div class="flex justify-between items-center mt-8">
@@ -25,6 +51,7 @@
         <!-- Botón Siguiente -->
         <button
           type="button"
+          (click)="siguiente()"
           class="flex items-center gap-2 bg-gradient-to-r from-emerald-400 to-sky-300 text-black font-medium px-6 py-2.5 rounded-xl hover:opacity-90 transition-all"
         >
           Siguiente
@@ -33,7 +60,6 @@
           </svg>
         </button>
       </div>
-    </form>
   </div>
 </div>
 
