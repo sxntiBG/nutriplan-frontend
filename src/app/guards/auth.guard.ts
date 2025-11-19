@@ -31,4 +31,6 @@ export class AuthGuard implements CanActivate {
       return true; // Si el token no es válido, lo consideramos expirado
     }
   }
+
+  
 }

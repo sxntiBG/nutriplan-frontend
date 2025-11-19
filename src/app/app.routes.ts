@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { Index } from './pages/index/index';
 import { Login } from './pages/login/login';
+import { Plan } from './pages/plan/plan';
 import { Register } from './pages/register/register';
 import { Settings } from './pages/settings/settings';
 import { AuthGuard } from './guards/auth.guard';
@@ -32,6 +33,9 @@ export const routes: Routes = [
   },
 
   { path: 'register', component: Register },
+
+  { path: 'plan', component: Plan, canActivate: [AuthGuard] },
+
   { path:'registro-datos', component:RegistroWizard},
   { path: 'settings', component: Settings, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' },
