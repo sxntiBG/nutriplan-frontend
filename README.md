@@ -83,19 +83,17 @@ Ejemplo de clase utilizada:
 
 ---
 
-## 🔐 Configuración del archivo `.env`
+## 🔐 Configuración del archivo de entorno
 
-Este proyecto utiliza variables de entorno para definir la **URL del backend** y otras configuraciones.
+Este proyecto utiliza archivos de entorno de Angular para definir la **URL del backend** y otras configuraciones.
 
-Crea un archivo llamado `.env` en la raíz del proyecto con el siguiente contenido:
+Para desarrollo, revisa el archivo `src/environments/environment.ts`:
 
-```
-NG_APP_API_URL=http://localhost:8080
-```
-
-Puedes usar el archivo `.env.example` como referencia para saber qué variables son necesarias.
-
-> **Importante:** El archivo `.env` **no se debe subir al repositorio**.
+```ts
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8080/api'
+};
 
 ---
 

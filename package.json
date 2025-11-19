@@ -34,6 +34,7 @@
     "@angular/ssr": "^20.3.9",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.26.3",
     "tslib": "^2.3.0",
     "zone.js": "^0.15.1"
   },
@@ -46,6 +47,7 @@
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
     "autoprefixer": "^10.4.22",
+    "dotenv": "^17.2.3",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
