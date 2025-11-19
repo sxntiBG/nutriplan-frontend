@@ -4,10 +4,11 @@ import { DatosNutricionales } from '../../../pages/datos-nutricionales/datos-nut
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../navbar/navbar";  
 import { ActividadFisica } from 'src/app/pages/actividad-fisica/actividad-fisica';
+import { ObjetivoNutricional } from 'src/app/pages/objetivo-nutricional/objetivo-nutricional';
 
 @Component({
   selector: 'app-registro-wizard',
-  imports: [CommonModule, ProgressBarComponent, DatosNutricionales, NavbarComponent, ActividadFisica],
+  imports: [CommonModule, ProgressBarComponent, DatosNutricionales, NavbarComponent, ActividadFisica, ObjetivoNutricional],
   templateUrl: './registro-wizard.html',
   styleUrl: './registro-wizard.css',
 })

@@ -15,6 +15,11 @@
       (onNext)="siguiente($event)">
     </app-actividad-fisica>
 
+     <app-objetivo-nutricional
+      *ngIf="pasoActual === 3"
+      (onNext)="siguiente($event)">
+    </app-objetivo-nutricional>
+
     
   </div>
 
