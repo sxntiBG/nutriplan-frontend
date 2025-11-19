@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
+  standalone:true,
   selector: 'app-objetivo-nutricional',
   imports: [CommonModule, FormsModule],
   templateUrl: './objetivo-nutricional.html',

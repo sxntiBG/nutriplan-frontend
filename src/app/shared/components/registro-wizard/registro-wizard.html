@@ -12,15 +12,20 @@
 
     <app-actividad-fisica
       *ngIf="pasoActual === 2"
-      (onNext)="siguiente($event)">
+      (onNext)="siguiente($event)"
+      (onPrev)="anterior()">
     </app-actividad-fisica>
 
      <app-objetivo-nutricional
       *ngIf="pasoActual === 3"
-      (onNext)="siguiente($event)">
+      (onNext)="siguiente($event)"
+      (onPrev)="anterior()">
     </app-objetivo-nutricional>
 
-    
+    <app-resumen
+      *ngIf="pasoActual === 4"
+      (onPrev)="anterior()">
+    </app-resumen>  
   </div>
 
 </div>
