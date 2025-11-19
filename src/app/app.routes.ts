@@ -23,7 +23,7 @@ export const routes: Routes = [
 
         // Solo redirige si el token es válido y no ha expirado
         if (authService.isLoggedIn()) {
-          router.navigate(['/settings']);
+          router.navigate(['/plan']);
           return false;
         }
         return true;
@@ -31,10 +31,8 @@ export const routes: Routes = [
     ],
   },
   { path: 'register', component: Register },
-
   { path: 'plan', component: Plan, canActivate: [AuthGuard] },
-
-  { path:'registro-datos', component:RegistroWizard},
+  { path: 'registro-datos', component:RegistroWizard, canActivate: [AuthGuard]},
   { path: 'settings', component: Settings, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' },
 ];

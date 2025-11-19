@@ -51,7 +51,7 @@ export class Register {
     });
   }
 
-  // ✅ Validador personalizado de fuerza de contraseña
+  // Validador personalizado de fuerza de contraseña
   passwordStrengthValidator(control: AbstractControl): ValidationErrors | null {
     const value = control.value;
     if (!value) return null;
@@ -65,7 +65,7 @@ export class Register {
     return !passwordValid ? { weakPassword: true } : null;
   }
 
-  // ✅ Verifica que las contraseñas coincidan
+  // Verifica que las contraseñas coincidan
   passwordMatchValidator(form: FormGroup) {
     const password = form.get('contrasena');
     const confirmPassword = form.get('confirmarContrasena');
@@ -102,12 +102,12 @@ export class Register {
     this.http.post<RegisterResponse>(this.apiUrl, registerData).subscribe({
       next: (response) => {
         this.isLoading = false;
-        console.log('✅ Registro exitoso:', response);
+        console.log('Registro exitoso:', response);
         this.router.navigate(['/login']);
       },
       error: (error) => {
         this.isLoading = false;
-        console.error('❌ Error en el registro:', error);
+        console.error('Error en el registro:', error);
 
         if (error.status === 400) {
           this.errorMessage = error.error?.message || 'Datos inválidos. Por favor, verifica la información.';

@@ -12,7 +12,7 @@ interface LoginResponse {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private apiUrl = `${environment.apiUrl}/auth`;
@@ -27,15 +27,19 @@ export class AuthService {
         this.setUserData({
           id: res.id,
           nombre: res.nombre,
-          correo: res.correo
+          correo: res.correo,
         });
       })
     );
   }
 
+  // Obtiene usuario por ID
+  getUserById(id: number): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/usuarios/${id}`);
+  }
+
   logout(): void {
-    localStorage.removeItem('token');
-    localStorage.removeItem('correo');
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 
@@ -63,7 +67,7 @@ export class AuthService {
     }
   }
 
-   // Guarda los datos del usuario al hacer login
+  // Guarda los datos del usuario al hacer login
   setUserData(user: any) {
     localStorage.setItem(this.userKey, JSON.stringify(user));
   }
@@ -76,9 +80,9 @@ export class AuthService {
 
   // Obtiene el id del usuario actual
   getUserId(): number | null {
-  const user = this.getUserData();
-  return user ? user.id : null;
-}
+    const user = this.getUserData();
+    return user ? user.id : null;
+  }
 
   // Limpia los datos al cerrar sesión
   clearUserData() {

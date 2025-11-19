@@ -6,7 +6,7 @@ import { Router, RouterModule } from '@angular/router';
   selector: 'app-nav',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './navbar.html'
+  templateUrl: './navbar.html',
 })
 export class NavbarComponent {
   mobileMenuOpen = false;
@@ -31,7 +31,7 @@ export class NavbarComponent {
   }
 
   logout(): void {
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 }
