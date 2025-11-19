@@ -27,8 +27,6 @@ export class Resumen implements OnInit{
     if (usuarioLogueado) {
       this.datos.usuario = { id: usuarioLogueado.id };
     }
-
-    console.log("Resumen cargado:", this.datos);
   }
 
   guardar() {
@@ -39,9 +37,11 @@ export class Resumen implements OnInit{
       estaturaCm: this.datos.datosNutricionales.estatura,
       edad: this.datos.datosNutricionales.edad,
       genero: this.datos.datosNutricionales.genero,
-      actividad: { id: this.datos.factorActividad}, // si factorActividad representa el ID
+      actividad: { id: this.datos.actividadFisica.factorActividad }, // si factorActividad representa el ID
       fechaRegistro: this.datos.datosNutricionales.fechaRegistro + 'T00:00:00'
     };
+
+    console.log("JSON a enviar:", JSON.stringify(payload, null, 2));
 
   this.resumenService.guardarDatos(payload).subscribe({
     next: (resp) => {
